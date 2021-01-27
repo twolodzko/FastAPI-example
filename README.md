@@ -9,3 +9,4 @@ See also:
  - [FastAPI documentation](https://fastapi.tiangolo.com/tutorial/)
  - [Flask vs FastAPI comparison](https://testdriven.io/blog/moving-from-flask-to-fastapi/#deployment)
  - [Introduction to curl](https://www.baeldung.com/curl-rest)
+ - [Uvicorn documentation](https://www.uvicorn.org/)
