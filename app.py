@@ -13,7 +13,7 @@ STARTUP_TIME: float
 @app.on_event('startup')
 def startup():
     """
-    Run this function when initializing the app.
+    This function runs when the app starts.
     """
     global STARTUP_TIME
     STARTUP_TIME = time.time()
@@ -26,16 +26,25 @@ def root():
 
 @app.get('/hello')
 def hello():
+    """
+    Simple GET call.
+    """
     return {"message": "Hello World!"}
 
 
 @app.get('/hello/{name}')
 def hello_get(name: str):
+    """
+    Example of passing parameters via GET.
+    """
     return {"message": f"Hello {name}!"}
 
 
 @app.get('/runtime')
 async def runtime():
+    """
+    Async GET calls.
+    """
     global STARTUP_TIME
     seconds = time.time() - STARTUP_TIME
     return {"message": f"I've been running for {seconds:.1f} seconds"}
@@ -50,6 +59,9 @@ class Data(BaseModel):
 
 @app.post('/data')
 def post_data(data: Data):
+    """
+    Process POST call with JSON data.
+    """
     return {
         "data_age_seconds": datetime.now() - data.timestamp,
         "name": data.name,
